@@ -1,0 +1,10 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = true
+[user]
+	email = scout@scout.new
+	name = Scout
+[remote "pierre"]
+	url = https://t:eyJhbGciOiJFUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJjYXB5Iiwic3ViIjoiQHBpZXJyZS9zdG9yYWdlIiwicmVwbyI6ImphbS1iZjhkZDExYi04NWVjLTQwNDYtOTdhYi0xMjdkZDI5ZDkxZDMiLCJzY29wZXMiOlsiZ2l0OnJlYWQiLCJnaXQ6d3JpdGUiXSwiaWF0IjoxNzY3MDQyNTQ0LCJleHAiOjE3OTg1Nzg1NDR9.omLbU057SQeVza9kZlyXA4u7dNwEAsX5hZo6p0e3gpZoTu-kbMobSHAJWodme3Y5k1ev-UNWa19Gi45XOs-hPQ@capy.code.storage/jam-bf8dd11b-85ec-4046-97ab-127dd29d91d3.git
+	fetch = +refs/heads/*:refs/remotes/pierre/*
