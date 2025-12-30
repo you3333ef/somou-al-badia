@@ -1,11 +1,14 @@
 'use client';
 
+import { Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import { ChevronLeft } from 'lucide-react';
 import { useTentById } from '@/lib/hooks/useTents';
 import { BookingForm } from '@/components/booking/BookingForm';
 
-export default function BookingPage() {
+export const dynamic = 'force-static';
+
+function BookingContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const tentId = searchParams.get('id');
@@ -95,5 +98,27 @@ export default function BookingPage() {
         <BookingForm tent={tent} />
       </div>
     </div>
+  );
+}
+
+export default function BookingPage() {
+  return (
+    <Suspense fallback={
+      <div className="min-h-screen py-8">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <div className="animate-pulse space-y-6">
+            <div className="h-10 bg-desert-200 rounded w-32" />
+            <div className="bg-white rounded-2xl p-6 space-y-4">
+              <div className="h-8 bg-desert-200 rounded" />
+              <div className="h-12 bg-desert-200 rounded" />
+              <div className="h-12 bg-desert-200 rounded" />
+              <div className="h-12 bg-desert-200 rounded" />
+            </div>
+          </div>
+        </div>
+      </div>
+    }>
+      <BookingContent />
+    </Suspense>
   );
 }

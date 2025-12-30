@@ -16,8 +16,6 @@ export function generateStaticParams() {
   ];
 }
 
-export const dynamicParams = true;
-
 export default function TentPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = use(params);
   return <TentDetailsClient slug={slug} />;
