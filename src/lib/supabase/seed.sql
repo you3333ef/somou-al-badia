@@ -25,7 +25,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0101.jpg',
     '/tents/IMG-20251228-WA0143.jpg'
   ],
-  'https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d',
+  '/videos/VID-20251228-WA0172.mp4',
   true
 ),
 
@@ -50,7 +50,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0144.jpg',
     '/tents/IMG-20251228-WA0145.jpg'
   ],
-  null,
+  '/videos/VID-20251228-WA0173.mp4',
   true
 ),
 
@@ -73,7 +73,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0147.jpg',
     '/tents/IMG-20251228-WA0148.jpg'
   ],
-  null,
+  '/videos/VID-20251228-WA0174.mp4',
   false
 ),
 
@@ -97,7 +97,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0150.jpg',
     '/tents/IMG-20251228-WA0151.jpg'
   ],
-  null,
+  '/videos/VID-20251229-WA0043.mp4',
   false
 ),
 
@@ -144,7 +144,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0157.jpg',
     '/tents/IMG-20251228-WA0158.jpg'
   ],
-  null,
+  '/videos/VID-20251228-WA0175.mp4',
   true
 ),
 
@@ -214,7 +214,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0165.jpg',
     '/tents/IMG-20251228-WA0140.jpg'
   ],
-  null,
+  '/videos/VID-20251229-WA0042.mp4',
   true
 ),
 
@@ -238,7 +238,7 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
     '/tents/IMG-20251228-WA0167.jpg',
     '/tents/IMG-20251228-WA0168.jpg'
   ],
-  null,
+  '/videos/VID-20251229-WA0044.mp4',
   false
 );
 

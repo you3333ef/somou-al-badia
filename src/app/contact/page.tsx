@@ -24,22 +24,22 @@ export default function ContactPage() {
     setIsSubmitting(true);
     
     setTimeout(() => {
-      alert('Thank you for contacting us! We will get back to you soon.');
+      alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت.');
       setFormData({ name: '', email: '', phone: '', message: '' });
       setIsSubmitting(false);
     }, 1000);
   };
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen py-8" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h1 className="text-4xl font-bold text-desert-900 mb-4">
-              Contact Us
+              تواصل معنا
             </h1>
             <p className="text-xl text-desert-600">
-              Have questions? We'd love to hear from you
+              لديك استفسار؟ يسعدنا التواصل معك
             </p>
           </div>
 
@@ -47,20 +47,20 @@ export default function ContactPage() {
             {[
               {
                 icon: Phone,
-                title: 'Phone',
-                content: '+966 50 123 4567',
-                link: 'tel:+966501234567',
+                title: 'الهاتف',
+                content: '0505952036',
+                link: 'tel:+971505952036',
               },
               {
                 icon: Mail,
-                title: 'Email',
-                content: 'info@somoalbadia.sa',
-                link: 'mailto:info@somoalbadia.sa',
+                title: 'البريد الإلكتروني',
+                content: 'info@somoalbadia.ae',
+                link: 'mailto:info@somoalbadia.ae',
               },
               {
                 icon: MapPin,
-                title: 'Location',
-                content: 'Saudi Arabia',
+                title: 'الموقع',
+                content: 'أبو ظبي، الإمارات العربية المتحدة',
               },
             ].map((item, index) => (
               <Card key={index} className="p-6 text-center">
@@ -73,7 +73,7 @@ export default function ContactPage() {
                 {item.link ? (
                   <a
                     href={item.link}
-                    className="text-primary-600 hover:text-primary-700"
+                    className="text-primary-600 hover:text-primary-700 text-lg font-medium"
                   >
                     {item.content}
                   </a>
@@ -86,47 +86,47 @@ export default function ContactPage() {
 
           <Card className="p-8">
             <h2 className="text-2xl font-bold text-desert-900 mb-6">
-              Send us a message
+              أرسل لنا رسالة
             </h2>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <Input
-                  label="Name"
+                  label="الاسم"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, name: e.target.value }))
                   }
-                  placeholder="Your name"
+                  placeholder="اسمك الكامل"
                   required
                 />
 
                 <Input
                   type="email"
-                  label="Email"
+                  label="البريد الإلكتروني"
                   value={formData.email}
                   onChange={(e) =>
                     setFormData((prev) => ({ ...prev, email: e.target.value }))
                   }
-                  placeholder="your@email.com"
+                  placeholder="email@example.com"
                   required
                 />
               </div>
 
               <Input
                 type="tel"
-                label="Phone"
+                label="رقم الهاتف"
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData((prev) => ({ ...prev, phone: e.target.value }))
                 }
-                placeholder="+966 5x xxx xxxx"
+                placeholder="05xxxxxxxx"
                 required
               />
 
               <div>
                 <label className="block text-sm font-semibold text-desert-800 mb-2">
-                  Message
+                  الرسالة
                 </label>
                 <textarea
                   value={formData.message}
@@ -136,7 +136,7 @@ export default function ContactPage() {
                       message: e.target.value,
                     }))
                   }
-                  placeholder="Tell us how we can help you..."
+                  placeholder="كيف يمكننا مساعدتك..."
                   rows={6}
                   required
                   className="w-full rounded-lg border-2 border-desert-200 bg-white px-4 py-3 text-base text-desert-900 placeholder:text-desert-400 focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20"
@@ -149,8 +149,8 @@ export default function ContactPage() {
                 className="w-full"
                 disabled={isSubmitting}
               >
-                <Send className="w-5 h-5 mr-2" />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                <Send className="w-5 h-5 ml-2" />
+                {isSubmitting ? 'جاري الإرسال...' : 'إرسال الرسالة'}
               </Button>
             </form>
           </Card>

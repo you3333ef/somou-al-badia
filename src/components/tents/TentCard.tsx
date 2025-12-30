@@ -16,7 +16,7 @@ interface TentCardProps {
   locale?: string;
 }
 
-export function TentCard({ tent, locale = 'en' }: TentCardProps) {
+export function TentCard({ tent, locale = 'ar' }: TentCardProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const { addTent, removeTent, isTentInCompare } = useCompare();
   const isInCompare = isTentInCompare(tent.id);

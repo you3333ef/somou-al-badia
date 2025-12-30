@@ -23,7 +23,7 @@ interface TentDetailsProps {
   locale?: string;
 }
 
-export function TentDetails({ tent, locale = 'en' }: TentDetailsProps) {
+export function TentDetails({ tent, locale = 'ar' }: TentDetailsProps) {
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -162,6 +162,19 @@ export function TentDetails({ tent, locale = 'en' }: TentDetailsProps) {
           </Button>
         </div>
       </Card>
+
+      {tent.video_url && (
+        <Card className="overflow-hidden">
+          <video
+            controls
+            className="w-full aspect-video"
+            poster={tent.images[0]}
+          >
+            <source src={tent.video_url} type="video/mp4" />
+            {locale === 'ar' ? 'متصفحك لا يدعم تشغيل الفيديو' : 'Your browser does not support video playback'}
+          </video>
+        </Card>
+      )}
 
       <Card className="p-6">
         <h2 className="text-2xl font-bold text-desert-900 mb-4">

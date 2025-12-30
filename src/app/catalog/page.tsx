@@ -9,6 +9,13 @@ import { Input } from '@/components/ui/Input';
 import { Card } from '@/components/ui/Card';
 import type { TentFilters, TentCategory } from '@/types/tent';
 
+const CATEGORY_LABELS: Record<TentCategory, string> = {
+  royal: 'ملكي',
+  luxury: 'فاخر',
+  premium: 'مميز',
+  standard: 'قياسي'
+};
+
 export default function CatalogPage() {
   const [filters, setFilters] = useState<TentFilters>({
     category: [],
@@ -54,14 +61,14 @@ export default function CatalogPage() {
     filters.search;
 
   return (
-    <div className="min-h-screen py-8">
+    <div className="min-h-screen py-8" dir="rtl">
       <div className="container mx-auto px-4">
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-desert-900 mb-4">
-            Our Tents
+            خيامنا
           </h1>
           <p className="text-xl text-desert-600">
-            Browse our collection of luxury desert accommodations
+            تصفح مجموعتنا من أماكن الإقامة الصحراوية الفاخرة
           </p>
         </div>
 
@@ -69,7 +76,7 @@ export default function CatalogPage() {
           <div className="flex-1">
             <Input
               type="text"
-              placeholder="Search tents..."
+              placeholder="ابحث عن الخيام..."
               value={filters.search}
               onChange={(e) =>
                 setFilters((prev) => ({ ...prev, search: e.target.value }))
@@ -82,8 +89,8 @@ export default function CatalogPage() {
             onClick={() => setShowFilters(!showFilters)}
             className="md:hidden"
           >
-            <Filter className="w-5 h-5 mr-2" />
-            Filters
+            <Filter className="w-5 h-5 ml-2" />
+            فلاتر
           </Button>
         </div>
 
@@ -95,14 +102,14 @@ export default function CatalogPage() {
           >
             <Card className="p-6 sticky top-4">
               <div className="flex items-center justify-between mb-6">
-                <h2 className="text-xl font-bold text-desert-900">Filters</h2>
+                <h2 className="text-xl font-bold text-desert-900">الفلاتر</h2>
                 {hasActiveFilters && (
                   <button
                     onClick={clearFilters}
                     className="text-sm text-primary-600 hover:text-primary-700 flex items-center gap-1"
                   >
                     <X className="w-4 h-4" />
-                    Clear
+                    مسح
                   </button>
                 )}
               </div>
@@ -110,7 +117,7 @@ export default function CatalogPage() {
               <div className="space-y-6">
                 <div>
                   <h3 className="text-sm font-semibold text-desert-900 mb-3">
-                    Category
+                    الفئة
                   </h3>
                   <div className="space-y-2">
                     {categories.map((category) => (
@@ -124,8 +131,8 @@ export default function CatalogPage() {
                           onChange={() => toggleCategory(category)}
                           className="w-4 h-4 text-primary-600 border-desert-300 rounded focus:ring-primary-500"
                         />
-                        <span className="text-desert-700 capitalize">
-                          {category}
+                        <span className="text-desert-700">
+                          {CATEGORY_LABELS[category]}
                         </span>
                       </label>
                     ))}
@@ -134,12 +141,12 @@ export default function CatalogPage() {
 
                 <div>
                   <h3 className="text-sm font-semibold text-desert-900 mb-3">
-                    Price Range (SAR/night)
+                    نطاق السعر (درهم/ليلة)
                   </h3>
                   <div className="space-y-3">
                     <Input
                       type="number"
-                      placeholder="Min"
+                      placeholder="الحد الأدنى"
                       value={filters.minPrice || ''}
                       onChange={(e) =>
                         setFilters((prev) => ({
@@ -152,7 +159,7 @@ export default function CatalogPage() {
                     />
                     <Input
                       type="number"
-                      placeholder="Max"
+                      placeholder="الحد الأقصى"
                       value={filters.maxPrice || ''}
                       onChange={(e) =>
                         setFilters((prev) => ({
@@ -168,11 +175,11 @@ export default function CatalogPage() {
 
                 <div>
                   <h3 className="text-sm font-semibold text-desert-900 mb-3">
-                    Capacity
+                    السعة
                   </h3>
                   <Input
                     type="number"
-                    placeholder="Min guests"
+                    placeholder="الحد الأدنى للضيوف"
                     value={filters.minCapacity || ''}
                     onChange={(e) =>
                       setFilters((prev) => ({
@@ -198,7 +205,7 @@ export default function CatalogPage() {
                       }
                       className="w-4 h-4 text-primary-600 border-desert-300 rounded focus:ring-primary-500"
                     />
-                    <span className="text-desert-700">Available only</span>
+                    <span className="text-desert-700">المتاحة فقط</span>
                   </label>
                 </div>
               </div>
@@ -225,7 +232,7 @@ export default function CatalogPage() {
             ) : (
               <>
                 <div className="mb-6 text-desert-600">
-                  {tents?.length || 0} tent{tents?.length !== 1 ? 's' : ''} found
+                  تم العثور على {tents?.length || 0} خيمة
                 </div>
                 <TentGrid tents={tents || []} />
               </>
