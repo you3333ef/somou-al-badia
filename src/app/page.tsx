@@ -12,7 +12,7 @@ export default function HomePage() {
   const { data: featuredTents, isLoading } = useFeaturedTents();
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" dir="rtl">
       <VideoBackground
         src="https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d"
         poster="https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?w=1920&q=80"
@@ -30,19 +30,19 @@ export default function HomePage() {
             </div>
             
             <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed">
-              Experience the ultimate luxury in the heart of the Arabian desert.
-              Where tradition meets modern comfort.
+              اختبر الفخامة المطلقة في قلب الصحراء العربية.
+              حيث يلتقي التراث مع الراحة الحديثة.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4">
               <Link href="/catalog">
                 <Button size="lg" className="w-full sm:w-auto">
-                  Explore Tents
+                  استكشف الخيام
                 </Button>
               </Link>
               <Link href="/contact">
                 <Button size="lg" variant="outline" className="w-full sm:w-auto bg-white/10 backdrop-blur-md text-white border-white hover:bg-white/20">
-                  Contact Us
+                  تواصل معنا
                 </Button>
               </Link>
             </div>
@@ -56,23 +56,23 @@ export default function HomePage() {
             {[
               {
                 icon: Sparkles,
-                title: 'Luxury Experience',
-                description: 'Premium tents with 5-star amenities',
+                title: 'تجربة فاخرة',
+                description: 'خيام فاخرة بمرافق خمس نجوم',
               },
               {
                 icon: MapPin,
-                title: 'Prime Location',
-                description: 'Breathtaking desert landscapes',
+                title: 'موقع متميز',
+                description: 'مناظر صحراوية خلابة في أبو ظبي',
               },
               {
                 icon: Award,
-                title: 'Award Winning',
-                description: 'Recognized for excellence',
+                title: 'حائز على جوائز',
+                description: 'معترف به للتميز والجودة',
               },
               {
                 icon: Shield,
-                title: 'Trusted Service',
-                description: '100% satisfaction guaranteed',
+                title: 'خدمة موثوقة',
+                description: 'ضمان الرضا 100%',
               },
             ].map((feature, index) => (
               <div
@@ -96,10 +96,10 @@ export default function HomePage() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-desert-900 mb-4">
-              Featured Tents
+              الخيام المميزة
             </h2>
             <p className="text-xl text-desert-600 max-w-2xl mx-auto">
-              Discover our handpicked selection of luxury desert accommodations
+              اكتشف مجموعتنا المختارة من أماكن الإقامة الصحراوية الفاخرة
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link href="/catalog">
               <Button size="lg" variant="outline">
-                View All Tents
+                عرض جميع الخيام
               </Button>
             </Link>
           </div>
@@ -136,15 +136,14 @@ export default function HomePage() {
       <section className="py-20 bg-desert-900 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-4xl font-bold mb-6">
-            Ready for an Unforgettable Experience?
+            هل أنت مستعد لتجربة لا تُنسى؟
           </h2>
           <p className="text-xl text-desert-300 mb-8 max-w-2xl mx-auto">
-            Book your luxury desert escape today and create memories that last a
-            lifetime
+            احجز رحلتك الصحراوية الفاخرة اليوم واصنع ذكريات تدوم مدى الحياة
           </p>
           <Link href="/catalog">
             <Button size="lg" className="bg-primary-500 hover:bg-primary-600">
-              Book Your Stay
+              احجز إقامتك الآن
             </Button>
           </Link>
         </div>

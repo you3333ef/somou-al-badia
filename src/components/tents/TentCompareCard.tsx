@@ -15,7 +15,7 @@ interface TentCompareCardProps {
 export function TentCompareCard({
   tent,
   onRemove,
-  locale = 'en',
+  locale = 'ar',
 }: TentCompareCardProps) {
   const name = locale === 'ar' ? tent.name_ar : tent.name_en;
   const features = locale === 'ar' ? tent.features_ar : tent.features_en;

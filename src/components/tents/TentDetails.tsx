@@ -23,7 +23,7 @@ interface TentDetailsProps {
   locale?: string;
 }
 
-export function TentDetails({ tent, locale = 'en' }: TentDetailsProps) {
+export function TentDetails({ tent, locale = 'ar' }: TentDetailsProps) {
   const router = useRouter();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 

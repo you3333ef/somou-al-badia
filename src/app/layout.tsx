@@ -17,14 +17,14 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Somou Al-Badia - Luxury Desert Camping',
+  title: 'سمو البادية - تخييم صحراوي فاخر',
   description:
-    'Experience the ultimate luxury desert camping in Saudi Arabia. Book your exclusive tent in the heart of the desert.',
-  keywords: 'desert camping, luxury tents, Saudi Arabia, glamping, desert resort',
+    'اختبر تجربة التخييم الصحراوي الفاخر في الإمارات العربية المتحدة. احجز خيمتك الحصرية في قلب الصحراء.',
+  keywords: 'تخييم صحراوي، خيام فاخرة، الإمارات، أبو ظبي، جلامبينج، منتجع صحراوي',
   authors: [{ name: 'Somou Al-Badia' }],
   openGraph: {
-    title: 'Somou Al-Badia - Luxury Desert Camping',
-    description: 'Experience the ultimate luxury desert camping in Saudi Arabia',
+    title: 'سمو البادية - تخييم صحراوي فاخر',
+    description: 'اختبر تجربة التخييم الصحراوي الفاخر في الإمارات العربية المتحدة',
     type: 'website',
   },
 };
@@ -44,7 +44,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
+    <html lang="ar" dir="rtl" className={`${geistSans.variable} ${geistMono.variable}`}>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;900&display=swap"

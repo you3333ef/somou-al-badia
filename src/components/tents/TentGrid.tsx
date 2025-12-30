@@ -6,7 +6,7 @@ interface TentGridProps {
   locale?: string;
 }
 
-export function TentGrid({ tents, locale = 'en' }: TentGridProps) {
+export function TentGrid({ tents, locale = 'ar' }: TentGridProps) {
   if (tents.length === 0) {
     return (
       <div className="text-center py-16">

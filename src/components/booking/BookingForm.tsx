@@ -18,7 +18,7 @@ interface BookingFormProps {
   locale?: string;
 }
 
-export function BookingForm({ tent, locale = 'en' }: BookingFormProps) {
+export function BookingForm({ tent, locale = 'ar' }: BookingFormProps) {
   const router = useRouter();
   const createBooking = useCreateBooking();
 
