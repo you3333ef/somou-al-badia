@@ -1,7 +1,7 @@
 -- Seed data for Somou Al-Badia
 -- Run this after schema.sql
 
--- Insert sample tents with REAL Unsplash images
+-- Insert sample tents with REAL uploaded images
 INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, category, capacity, area_sqm, price_per_night, features_en, features_ar, amenities_en, amenities_ar, images, video_url, is_featured) VALUES
 
 -- Royal Category
@@ -20,10 +20,10 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Heating', 'Smart TV', 'Sound system', 'Coffee machine', 'Mini bar', 'Safe'],
   ARRAY['واي فاي', 'تكييف', 'تدفئة', 'تلفزيون ذكي', 'نظام صوتي', 'آلة قهوة', 'ميني بار', 'خزنة'],
   ARRAY[
-    'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=1200&q=80',
-    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80',
-    'https://images.unsplash.com/photo-1602391833977-358a52198938?w=1200&q=80',
-    'https://images.unsplash.com/photo-1566073771259-6a8506099945?w=1200&q=80'
+    '/tents/IMG-20251228-WA0099.jpg',
+    '/tents/IMG-20251228-WA0100.jpg',
+    '/tents/IMG-20251228-WA0101.jpg',
+    '/tents/IMG-20251228-WA0143.jpg'
   ],
   'https://player.vimeo.com/external/434045526.sd.mp4?s=c27eecc69a27dbc4ff2b87d38afc35f1a9e7c02d',
   true
@@ -45,10 +45,10 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Heating', 'LED TV', 'Bluetooth speaker', 'Tea set', 'Refrigerator'],
   ARRAY['واي فاي', 'تكييف', 'تدفئة', 'تلفزيون LED', 'سماعة بلوتوث', 'طقم شاي', 'ثلاجة'],
   ARRAY[
-    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80',
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-    'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80',
-    'https://images.unsplash.com/photo-1602391833977-358a52198938?w=1200&q=80'
+    '/tents/IMG-20251228-WA0141.jpg',
+    '/tents/IMG-20251228-WA0142.jpg',
+    '/tents/IMG-20251228-WA0144.jpg',
+    '/tents/IMG-20251228-WA0145.jpg'
   ],
   null,
   true
@@ -69,9 +69,9 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Heating', 'TV', 'Speaker', 'Mini fridge'],
   ARRAY['واي فاي', 'تكييف', 'تدفئة', 'تلفزيون', 'سماعة', 'ثلاجة صغيرة'],
   ARRAY[
-    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80',
-    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80',
-    'https://images.unsplash.com/photo-1602391833977-358a52198938?w=1200&q=80'
+    '/tents/IMG-20251228-WA0146.jpg',
+    '/tents/IMG-20251228-WA0147.jpg',
+    '/tents/IMG-20251228-WA0148.jpg'
   ],
   null,
   false
@@ -93,9 +93,9 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Heating', 'Fan', 'Cooler'],
   ARRAY['واي فاي', 'تكييف', 'تدفئة', 'مروحة', 'مبرد'],
   ARRAY[
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-    'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80',
-    'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80'
+    '/tents/IMG-20251228-WA0149.jpg',
+    '/tents/IMG-20251228-WA0150.jpg',
+    '/tents/IMG-20251228-WA0151.jpg'
   ],
   null,
   false
@@ -116,11 +116,36 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Fan', 'Lighting'],
   ARRAY['واي فاي', 'تكييف', 'مروحة', 'إضاءة'],
   ARRAY[
-    'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80',
-    'https://images.unsplash.com/photo-1551632811-561732d1e306?w=1200&q=80'
+    '/tents/IMG-20251228-WA0152.jpg',
+    '/tents/IMG-20251228-WA0153.jpg'
   ],
   null,
   false
+),
+
+-- Glass Pavilion (Premium/Luxury)
+(
+  'Crystal Sky Pavilion',
+  'جناح السماء الكريستالية',
+  'crystal-sky-pavilion',
+  'A stunning glass-enclosed structure offering panoramic views and modern luxury. Perfect for those who want to experience the outdoors with complete comfort and climate control.',
+  'هيكل زجاجي مذهل يوفر مناظر بانورامية وفخامة حديثة. مثالي لمن يرغب في تجربة الهواء الطلق مع راحة كاملة والتحكم في المناخ.',
+  'luxury',
+  8,
+  160.00,
+  2400.00,
+  ARRAY['Luxury seating', 'Glass walls', 'Climate control', 'Premium flooring', 'Ambient lighting', 'Privacy features'],
+  ARRAY['جلسات فاخرة', 'جدران زجاجية', 'تحكم بالمناخ', 'أرضيات فاخرة', 'إضاءة محيطية', 'ميزات خصوصية'],
+  ARRAY['WiFi', 'AC', 'Heating', 'Smart lighting', 'Sound system', 'Mini bar'],
+  ARRAY['واي فاي', 'تكييف', 'تدفئة', 'إضاءة ذكية', 'نظام صوتي', 'ميني بار'],
+  ARRAY[
+    '/tents/IMG-20251228-WA0155.jpg',
+    '/tents/IMG-20251228-WA0156.jpg',
+    '/tents/IMG-20251228-WA0157.jpg',
+    '/tents/IMG-20251228-WA0158.jpg'
+  ],
+  null,
+  true
 ),
 
 -- Standard Category
@@ -139,8 +164,8 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['Lighting', 'Fan', 'Cooler'],
   ARRAY['إضاءة', 'مروحة', 'مبرد'],
   ARRAY[
-    'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1200&q=80',
-    'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80'
+    '/tents/IMG-20251228-WA0159.jpg',
+    '/tents/IMG-20251228-WA0160.jpg'
   ],
   null,
   false
@@ -161,13 +186,13 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['Lighting', 'Fan'],
   ARRAY['إضاءة', 'مروحة'],
   ARRAY[
-    'https://images.unsplash.com/photo-1478131143081-80f7f84ca84d?w=1200&q=80'
+    '/tents/IMG-20251228-WA0161.jpg'
   ],
   null,
   false
 ),
 
--- One more luxury for variety
+-- Rooftop Lounge (Luxury)
 (
   'Sahara Crown',
   'تاج الصحراء',
@@ -183,14 +208,38 @@ INSERT INTO tents (name_en, name_ar, slug, description_en, description_ar, categ
   ARRAY['WiFi', 'AC', 'Heating', 'Smart TV', 'Sound system', 'Coffee station', 'Full kitchen', 'Bar'],
   ARRAY['واي فاي', 'تكييف', 'تدفئة', 'تلفزيون ذكي', 'نظام صوتي', 'محطة قهوة', 'مطبخ كامل', 'بار'],
   ARRAY[
-    'https://images.unsplash.com/photo-1596436889106-be35e843f974?w=1200&q=80',
-    'https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80',
-    'https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80',
-    'https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=1200&q=80',
-    'https://images.unsplash.com/photo-1602391833977-358a52198938?w=1200&q=80'
+    '/tents/IMG-20251228-WA0162.jpg',
+    '/tents/IMG-20251228-WA0163.jpg',
+    '/tents/IMG-20251228-WA0164.jpg',
+    '/tents/IMG-20251228-WA0165.jpg',
+    '/tents/IMG-20251228-WA0140.jpg'
   ],
   null,
   true
+),
+
+-- Additional Premium Options
+(
+  'Desert Garden Retreat',
+  'منتجع حديقة الصحراء',
+  'desert-garden-retreat',
+  'Modern outdoor living spaces with beautiful landscaping and contemporary design. Features premium seating areas and sophisticated outdoor amenities.',
+  'مساحات معيشة خارجية حديثة مع تنسيق حدائق جميل وتصميم معاصر. يتميز بمناطق جلوس فاخرة ووسائل راحة خارجية متطورة.',
+  'premium',
+  6,
+  130.00,
+  1400.00,
+  ARRAY['Modern design', 'Garden setting', 'Premium seating', 'Outdoor lounge'],
+  ARRAY['تصميم حديث', 'بيئة حديقة', 'جلسات فاخرة', 'صالة خارجية'],
+  ARRAY['WiFi', 'AC', 'Lighting', 'Sound system'],
+  ARRAY['واي فاي', 'تكييف', 'إضاءة', 'نظام صوتي'],
+  ARRAY[
+    '/tents/IMG-20251228-WA0166.jpg',
+    '/tents/IMG-20251228-WA0167.jpg',
+    '/tents/IMG-20251228-WA0168.jpg'
+  ],
+  null,
+  false
 );
 
 -- Add some sample availability (block out some dates for testing)
