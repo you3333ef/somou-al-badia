@@ -53,7 +53,7 @@ export function TentDetails({ tent, locale = 'en' }: TentDetailsProps) {
 
   const handleBooking = () => {
     hapticImpact('medium');
-    router.push(`/booking/${tent.id}`);
+    router.push(`/booking?id=${tent.id}`);
   };
 
   return (
