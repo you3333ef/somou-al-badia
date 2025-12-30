@@ -6,8 +6,7 @@ import { ChevronLeft } from 'lucide-react';
 import { useTentById } from '@/lib/hooks/useTents';
 import { BookingForm } from '@/components/booking/BookingForm';
 
-export default function BookingPage({ params }: { params: Promise<{ id: string }> }) {
-  const { id } = use(params);
+export function BookingFormClient({ id }: { id: string }) {
   const router = useRouter();
   const { data: tent, isLoading } = useTentById(id);
 
